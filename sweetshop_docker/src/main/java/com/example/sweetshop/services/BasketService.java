@@ -22,13 +22,13 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 public class BasketService {
     private final BasketRepository basketRepository;
-    private final CakeRepository cakeRepository;
 
     public List<Basket> listBasket() {
         return basketRepository.findAll();
     }
 
     public void addCakeToBasket(Basket basket) {
+
         basketRepository.save(basket);
     }
 
@@ -38,9 +38,11 @@ public class BasketService {
     public void deleteAllFromBasket() {
         List<Basket> basketCakes = basketRepository.findAll();
         for (Basket b : basketCakes){
-            Cake cake = cakeRepository.findById(b.getCakeId()).orElseThrow();
+            Cake cake = b.getCake();
             cake.setBeing(cake.getBeing()-1);
         }
         basketRepository.deleteAll();
     }
 }
+
+

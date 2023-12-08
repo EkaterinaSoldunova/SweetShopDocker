@@ -21,6 +21,9 @@
         }
     </style>
 </head>
+<header>
+    <a href="/login">Вход</a>
+</header>
 <body>
 <h1>Регистрация</h1>
 <form action="/registration " method="post">

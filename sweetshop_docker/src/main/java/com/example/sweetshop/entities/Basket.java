@@ -15,10 +15,7 @@ public class Basket {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name = "cakeId")
-    private Long cakeId;
-    @Column(name = "cakeName")
-    private String cakeName;
-    @Column(name = "cakePrice")
-    private int cakePrice;
+    @ManyToOne
+    @JoinColumn(name = "cakeId")
+    private Cake cake;
 }

@@ -60,7 +60,7 @@
     <div class="cake">
         <p> ${cake.id} ${cake.name} ${cake.price} руб. ${cake.being} шт. </p>
         <#if user.email??>
-        <form class="formButton" action="/basket/add?cakeId=${cake.id}&cakeName=${cake.name}&cakePrice=${cake.price}&cakeBeing=${cake.being}" method="post">
+        <form class="formButton" action="/basket/add/${cake.id}" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button class="btn" type="submit">Добавить в корзину</button>
         </form>

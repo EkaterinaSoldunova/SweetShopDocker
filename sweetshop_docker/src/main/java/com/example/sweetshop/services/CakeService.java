@@ -40,4 +40,8 @@ public class CakeService {
         if (principal == null ) return new User();
         return userRepository.findByEmail(principal.getName());
     }
+    public Cake getCakeById(Long id){
+
+        return cakeRepository.findById(id).orElseThrow(() -> new RuntimeException("Cake not found"));
+    }
 }

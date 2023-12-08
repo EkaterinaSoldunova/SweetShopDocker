@@ -11,10 +11,5 @@ CREATE TABLE cakes (
 CREATE TABLE basket (
                         id SERIAL PRIMARY KEY,
                         cakeId INT NOT NULL,
-                        cakeName VARCHAR(255) NOT NULL,
-                        cakePrice INT NOT NULL
 );
-INSERT INTO cakes (name, price) VALUES
-                                    ('Эклеры Ассорти', '800'),
-                                    ('Капкейки Тыква-пекан', '900'),
-                                    ('Пирожное манго-маракуйя', '400');
+ALTER TABLE basket ADD FOREIGN KEY (cakeId) REFERENCES cakes(id);

@@ -19,7 +19,6 @@ public class AdminController {
     @GetMapping("/admin")
     public String admin(Model model, Principal principal){
         model.addAttribute("users", userService.list());
-//        model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "admin";
     }
     @PostMapping("/admin/user/ban/{id}")

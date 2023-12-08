@@ -22,6 +22,8 @@
     </style>
 </head>
 <header>
+    <a href="/">Главная</a>
+    <br>
     <a href="/registration">Регистрация</a>
 </header>
 <body>

@@ -36,10 +36,10 @@
 </header>
 <body>
 <h1>Корзина</h1>
-<#list basket as cake>
+<#list basket as basket>
     <div class="cake">
-        <p>${cake.cakeName} ${cake.cakePrice} руб.</p>
-        <form class="formButton" action="/basket/delete/${cake.id}" method="post">
+        <p>${basket.cake.name} ${basket.cake.price} руб.</p>
+        <form class="formButton" action="/basket/delete/${basket.id}" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit">Удалить из корзины</button>
         </form>
@@ -47,7 +47,7 @@
     <#else>
     <p>Корзина пуста</p>
 </#list>
-<form class="formButton" action="/basket/deleteAll" method="post">
+<form action="/basket/deleteAll" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <button type="submit">Оформить заказ</button>
 </form>
